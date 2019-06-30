@@ -1,19 +1,18 @@
 package com.company;
 
-import com.company.female.FemaleFactory;
-import com.company.male.MaleFactory;
-
 public class Main {
-    public static void main(String[] args){
-        MaleFactory maleFactory = new MaleFactory();
-        System.out.println(maleFactory.getPerson(99));
-        System.out.println(maleFactory.getPerson(4));
-        System.out.println(maleFactory.getPerson(15));
+    public static void main(String[] args) {
+        AbstractFactory factory = FactoryProducer.getFactory(FactoryProducer.HumanFactoryType.FEMALE);
+        useFactory(factory);
 
-        FemaleFactory femaleFactory = new FemaleFactory();
-        System.out.println(femaleFactory.getPerson(99));
-        System.out.println(femaleFactory.getPerson(4));
-        System.out.println(femaleFactory.getPerson(15));
+        factory = FactoryProducer.getFactory(FactoryProducer.HumanFactoryType.MALE);
+        useFactory(factory);
+    }
+
+    public static void useFactory(AbstractFactory factory) {
+        System.out.println(factory.getPerson(99));
+        System.out.println(factory.getPerson(4));
+        System.out.println(factory.getPerson(15));
     }
 
 }

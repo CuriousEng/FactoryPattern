@@ -1,8 +1,9 @@
 package com.company.male;
 
+import com.company.AbstractFactory;
 import com.company.Human;
 
-public class MaleFactory<T extends Human> {
+public class MaleFactory<T extends Human> implements AbstractFactory {
 
     public T getPerson(int age){
         if(age <= KidBoy.MAX_AGE){
