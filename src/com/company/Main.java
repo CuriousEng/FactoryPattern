@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.female.FemaleFactory;
 import com.company.male.MaleFactory;
 
 public class Main {
@@ -8,6 +9,11 @@ public class Main {
         System.out.println(maleFactory.getPerson(99));
         System.out.println(maleFactory.getPerson(4));
         System.out.println(maleFactory.getPerson(15));
+
+        FemaleFactory femaleFactory = new FemaleFactory();
+        System.out.println(femaleFactory.getPerson(99));
+        System.out.println(femaleFactory.getPerson(4));
+        System.out.println(femaleFactory.getPerson(15));
     }
 
 }
